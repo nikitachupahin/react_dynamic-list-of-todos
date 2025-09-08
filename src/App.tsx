@@ -32,6 +32,7 @@ export const App: React.FC = () => {
   useEffect(() => {
     if (!selectedTodo) {
       setSelectedUser(null);
+      setIsUserLoading(false);
 
       return;
     }
