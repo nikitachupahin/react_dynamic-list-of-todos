@@ -21,7 +21,7 @@ export const App: React.FC = () => {
   const [query, setQuery] = useState('');
 
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
-  const [isUserLoading, setIsUserLoading] = useState(true);
+  const [isUserLoading, setIsUserLoading] = useState(false);
 
   useEffect(() => {
     getTodos()
@@ -35,6 +35,8 @@ export const App: React.FC = () => {
 
       return;
     }
+
+    setIsUserLoading(true);
 
     getUser(selectedTodo.userId)
       .then(user => setSelectedUser(user))
